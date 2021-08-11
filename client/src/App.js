@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Route, Switch, Route } from 'react-router-dom'
+import { Router } from 'express';
+const App = () => {
+    return ( <
+        div className = "App" > React App < /div> <
+        Router >
+        <
+        div className = "app" >
+        <
+        Switch >
+        <
+        Route exact path = "/login"
+        component = { LoginScreen }
+        /> <
+        Route exact path = "/register"
+        component = { RegisterScreen }
+        /> <
+        Route exact path = "/forgotpassword"
+        component = { ForgotPasswordScreen }
+        /> <
+        Route exact path = "/passwordreset/:resetToken"
+        component = { ResetPasswordScreen }
+        />
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+        <
+        /Switch> <
+        /div> <
+        /Router>
+    )
+
+};
 
 export default App;
